@@ -72,3 +72,30 @@ function registerUser() {
       qDiv.appendChild(qBox)
     })
   }
+
+
+  function submitQuiz() {
+    let quizData = JSON.parse(localStorage.getItem('quizzes'))[currentQuiz]
+    let total = quizData.questions.length
+    let score = 0
+    quizData.questions.forEach((q, qi) => {
+      let selected = document.querySelector('input[name="q' + qi + '"]:checked')
+      if (selected && selected.value == q.ans) score++
+    })
+    document.querySelector('.score-text').innerText = 'You got ' + score + ' out of ' + total
+    let users = JSON.parse(localStorage.getItem('users'))
+    let u = users.find(x => x.email == currentUser.email)
+    u.scores[quizData.title] = score
+    localStorage.setItem('users', JSON.stringify(users))
+  }
+  
+  function showDashboard() {
+    let users = JSON.parse(localStorage.getItem('users') || '[]')
+    let box = document.querySelector('.user-scores')
+    box.innerHTML = ''
+    users.forEach(u => {
+      let div = document.createElement('div')
+      div.innerText = u.email + ' - ' + JSON.stringify(u.scores)
+      box.appendChild(div)
+    })
+  }
