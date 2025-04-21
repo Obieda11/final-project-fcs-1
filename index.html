@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="auth">
+    <h2>Login / Register</h2>
+    <div class="tabs">
+      <button onclick="showTab('login')">Login</button>
+      <button onclick="showTab('register')">Register</button>
+    </div>
+    <div class="tab login active-tab">
+      <p>Email: <input class="login-email"></p>
+      <p>Password: <input type="password" class="login-pass"></p>
+      <button onclick="loginUser()">Login</button>
+    </div>
+    <div class="tab register">
+      <p>Email: <input class="register-email"></p>
+      <p>Password: <input type="password" class="register-pass"></p>
+      <button onclick="registerUser()">Register</button>
+    </div>
+  </div
