@@ -36,3 +36,16 @@ function registerUser() {
       alert('wrong info')
     }
   }
+
+  function showQuizzes() {
+    let quizList = JSON.parse(localStorage.getItem('quizzes') || '[]')
+    let listDiv = document.querySelector('.quiz-list')
+    listDiv.innerHTML = ''
+    quizList.forEach((quiz, i) => {
+      let btn = document.createElement('button')
+      btn.innerText = quiz.title
+      btn.className = 'quiz-btn'
+      btn.onclick = () => startQuiz(i)
+      listDiv.appendChild(btn)
+    })
+  }
