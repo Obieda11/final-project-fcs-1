@@ -1,0 +1,23 @@
+body {
+    font-family: sans-serif;
+  }
+  
+  .tab {
+    display: none;
+  }
+  
+  .active-tab {
+    display: block;
+  }
+  
+  .quiz-btn {
+    margin: 5px;
+    padding: 10px;
+    background: #ddd;
+    cursor: pointer;
+  }
+  
+  .question {
+    margin: 10px 0;
+  }
+  
