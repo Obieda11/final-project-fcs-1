@@ -49,3 +49,26 @@ function registerUser() {
       listDiv.appendChild(btn)
     })
   }
+  function startQuiz(index) {
+    currentQuiz = index
+    let quizData = JSON.parse(localStorage.getItem('quizzes'))[index]
+    document.querySelector('.home').style.display = 'none'
+    document.querySelector('.quiz-page').style.display = 'block'
+    document.querySelector('.quiz-title').innerText = quizData.title
+    let qDiv = document.querySelector('.questions')
+    qDiv.innerHTML = ''
+    quizData.questions.forEach((q, qi) => {
+      let qBox = document.createElement('div')
+      qBox.className = 'question'
+      qBox.innerText = q.q
+      q.options.forEach((opt, oi) => {
+        let radio = document.createElement('input')
+        radio.type = 'radio'
+        radio.name = 'q' + qi
+        radio.value = opt
+        qBox.appendChild(document.createTextNode(opt))
+        qBox.appendChild(radio)
+      })
+      qDiv.appendChild(qBox)
+    })
+  }
