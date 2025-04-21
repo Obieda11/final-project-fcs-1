@@ -99,24 +99,23 @@ function showDashboard() {
   })
 }
 
-
 if (!localStorage.getItem('quizzes')) {
-  localStorage.setItem('quizzes', JSON.stringify([
-    {
-      title: 'Astronomy',
-      questions: [
-        { q: 'Which planet is known as the "Red Planet"?', options: ['Venus', 'Mars', 'Jupitor'], ans: 'Mars' },
-        { q: 'What is the largest planet in our solar system?', options: ['Saturn', 'Earth', 'Jupitor'], ans: 'Jupitor' },
-        { q: 'Which celestial body is classified as a dwarf planet?', options: ['Pluto', 'Mercury', 'Titan'], ans: 'Pluto' }
-      ]
-    },
-    {
-      title: 'Football',
-      questions: [
-        { q: 'who is the best football player', options: ['C.ronaldo', 'Messi', 'Mo salah'], ans: 'Messi' },
-        { q: 'who won football world cup in 2025', options: ['Spain', 'Lebanon', 'No body'], ans: 'No body' },
-        { q: 'Which country invented soccer?', options: ['England', 'Spain', 'Portugal'], ans: 'England' }
-      ]
-    }
-  ]))
-}
+    localStorage.setItem('quizzes', JSON.stringify([
+      {
+        title: 'JS Basics',
+        questions: [
+          { q: 'What is JS?', options: ['Language', 'Car', 'Planet'], ans: 'Language' },
+          { q: 'Where runs JS?', options: ['Server', 'Browser', 'Microwave'], ans: 'Browser' },
+          { q: 'JS can do?', options: ['Cook', 'Code', 'Fly'], ans: 'Code' }
+        ]
+      },
+      {
+        title: 'HTML',
+        questions: [
+          { q: 'HTML stands for?', options: ['Hi Text', 'HyperText Markup Language', 'Hot Meal'], ans: 'HyperText Markup Language' },
+          { q: 'HTML makes?', options: ['Games', 'Structure', 'Noise'], ans: 'Structure' },
+          { q: 'Which is tag?', options: ['<tag>', '{tag}', '[tag]'], ans: '<tag>' }
+        ]
+      }
+    ]))
+  }
